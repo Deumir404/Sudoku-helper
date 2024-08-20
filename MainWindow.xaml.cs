@@ -62,6 +62,60 @@ namespace Sudoku_helper
             {
                 var n_row = Grid.GetRow(textBox);
                 var n_col = Grid.GetColumn(textBox);
+                //9 квадрат
+                if ((row > 5 && col > 5) && (n_row > 5 && n_col >5))
+                {
+                    Brush brush = new SolidColorBrush(Color.FromArgb(123, 255, 0, 0));
+                    textBox.Background = brush;
+                }
+                //8 квадрат
+                else if ((row > 5 && col > 2  && col < 6) && (n_row > 5 && n_col > 2 && n_col < 6))
+                {
+                        Brush brush = new SolidColorBrush(Color.FromArgb(123, 255, 0, 0));
+                        textBox.Background = brush;
+                }
+                //7 квадрат
+                else if ((row > 5 && col > -1 && row < 9 && col < 3) && (n_row > 5 && n_col > -1 && n_row < 9 && n_col < 3))
+                {
+                    Brush brush = new SolidColorBrush(Color.FromArgb(123, 255, 0, 0));
+                    textBox.Background = brush;
+                }
+                //6 квадрат
+                else if ((row > 2 && col > 5 && row < 6 && col < 9) && (n_row > 2 && n_col > 5 && n_row < 6 && n_col < 9))
+                {
+                    Brush brush = new SolidColorBrush(Color.FromArgb(123, 255, 0, 0));
+                    textBox.Background = brush;
+                }
+                //5 квадрат
+                else if ((row > 2 && col > 2 && row < 6 && col < 6) && (n_row > 2 && n_col > 2 && n_row < 6 && n_col < 6))
+                {
+                    Brush brush = new SolidColorBrush(Color.FromArgb(123, 255, 0, 0));
+                    textBox.Background = brush;
+                }
+                //4 квадрат
+                else if ((row > 2 && col > -1 && row < 6 && col < 3) && (n_row > 2 && n_col > -1 && n_row < 6 && n_col < 3))
+                {
+                    Brush brush = new SolidColorBrush(Color.FromArgb(123, 255, 0, 0));
+                    textBox.Background = brush;
+                }
+                //3 квадрат
+                else if ((row > -1 && col > 5 && row < 3 && col < 9) && (n_row > -1 && n_col > 5 && n_row < 3 && n_col < 9))
+                {
+                    Brush brush = new SolidColorBrush(Color.FromArgb(123, 255, 0, 0));
+                    textBox.Background = brush;
+                }
+                //2 квадрат
+                else if ((row > -1 && col > 2 && row < 3 && col < 6) && (n_row > -1 && n_col > 2 && n_row < 3 && n_col < 6))
+                {
+                    Brush brush = new SolidColorBrush(Color.FromArgb(123, 255, 0, 0));
+                    textBox.Background = brush;
+                }
+                //1 квадрат
+                else if ((row > -1 && col > -1 && row < 3 && col < 3) && (n_row > -1 && n_col > -1 && n_row < 3 && n_col < 3))
+                {
+                    Brush brush = new SolidColorBrush(Color.FromArgb(123, 255, 0, 0));
+                    textBox.Background = brush;
+                }
                 if (n_row == row || n_col == col)
                 {
                     Brush brush = new SolidColorBrush(Color.FromArgb(123, 255, 0, 0));
