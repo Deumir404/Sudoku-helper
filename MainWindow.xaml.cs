@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -156,31 +157,27 @@ namespace Sudoku_helper
             SetUpGame();
         }
 
-        private int[,,] Fill_matrix()
+        private int[,,] Fill_matrix(int num, int[,,] matrix)
         {
-            int[,,] matrix = new int[10, 9, 9];
             var brush = new SolidColorBrush(Color.FromArgb(123, 255, 0, 0)).ToString();
-            for (int i = 1; i < 10; i++)
+            Clear_area();
+            Check_match(Convert.ToString(num));
+            foreach (TextBox textBox in mainGrid.Children.OfType<TextBox>())
             {
-                Clear_area();
-                Check_match(Convert.ToString(i));
-                foreach (TextBox textBox in mainGrid.Children.OfType<TextBox>())
+                var row = Grid.GetRow(textBox);
+                var col = Grid.GetColumn(textBox);
+                var color = textBox.Background.ToString();
+                if (textBox.Text == Convert.ToString(num))
                 {
-                    var row = Grid.GetRow(textBox);
-                    var col = Grid.GetColumn(textBox);
-                    var color = textBox.Background.ToString();
-                    if (textBox.Text == Convert.ToString(i))
-                    {
-                        matrix[i, col, row] = i;
-                    }
-                    else if (color == brush || textBox.Text != "")
-                    {
-                        matrix[i, col, row] = 10;
-                    }
-                    else
-                    {
-                        matrix[i, col, row] = 0;
-                    }
+                    matrix[num, col, row] = num;
+                }
+                else if (color == brush || textBox.Text != "")
+                {
+                    matrix[num, col, row] = 10;
+                }
+                else
+                {
+                    matrix[num, col, row] = 0;
                 }
             }
             return matrix;
@@ -188,35 +185,39 @@ namespace Sudoku_helper
 
         private void BTN_match_Click(object sender, RoutedEventArgs e)
         {
-                //while (Is_match(matrix) != true)
-                //{
+            int attemp = 0;
+            int[,,] matrix = new int[10, 9, 9];
+            while (!Is_solve(matrix))
+            {
                 for (int i = 1; i < 10; i++)
                 {
-                    var matrix = Fill_matrix();
+                    matrix = Fill_matrix(i, matrix);
                     matrix = Check_horizon(matrix, i);
-                    Fill_grid(matrix);
-                    matrix = Fill_matrix();
+                    Fill_grid(matrix, i);
+                    matrix = Fill_matrix(i, matrix);
                     matrix = Check_vertical(matrix, i);
-                    Fill_grid(matrix);
+                    Fill_grid(matrix, i);
                 }
-            //}
-            
+                if (attemp >= 30)
+                {
+                    break;
+                }
+                attemp++;
+            }
+
 
 
         }
 
-        private void Fill_grid(int[,,] matrix)
+        private void Fill_grid(int[,,] matrix, int num)
         {
             foreach (TextBox textBox in mainGrid.Children.OfType<TextBox>())
             {
                 var row = Grid.GetRow(textBox);
                 var col = Grid.GetColumn(textBox);
-                for (int i = 1; i < 10; i++)
+                if (matrix[num, col, row] == num)
                 {
-                    if (matrix[i, col, row] == i)
-                    {
-                        textBox.Text = Convert.ToString(matrix[i,col, row]);
-                    }
+                    textBox.Text = Convert.ToString(matrix[num,col, row]);
                 }
             }
             
@@ -281,19 +282,18 @@ namespace Sudoku_helper
             return matrix;
         }
 
-        //private bool Is_match(int[,,] matrix)
-        //{
-        //    for (int i = 0; i < 9; i++)
-        //    {
-        //        for(int j = 0; j < 9; j++)
-        //        {
-        //            if (matrix[i,j] == 0)
-        //            {
-        //                return false;
-        //            }
-        //        }
-        //    }
-        //    return true;
-        //}
+        private bool Is_solve(int[,,] matrix)
+        {
+            bool checker = true;
+            foreach (TextBox textBox in mainGrid.Children.OfType<TextBox>())
+            {
+                if (textBox.Text == "")
+                {
+                    checker = false;
+                    break;
+                }
+            }
+            return checker;
+        }
     }
 }
