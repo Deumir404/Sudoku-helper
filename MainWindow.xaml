@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sudoku_helper"
         mc:Ignorable="d"
-        Title="Sudoku Helper" Height="434" Width="800" ResizeMode="NoResize">
+        Title="Sudoku Helper" Height="500" Width="800" ResizeMode="NoResize">
     <Grid x:Name="mainGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -19,26 +19,28 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="27*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBox Grid.Column="0" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
-        <TextBox Grid.Column="0" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
-        <TextBox Grid.Column="0" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,1,1,5" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
-        <TextBox Grid.Column="0" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,5,1,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
-        <TextBox Grid.Column="0" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
-        <TextBox Grid.Column="0" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,1,1,5" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
-        <TextBox Grid.Column="0" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,5,1,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
-        <TextBox Grid.Column="0" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
-        <TextBox Grid.Column="0" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
-        <TextBox Grid.Column="1" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
+        <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
+        <TextBox HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
+        <TextBox HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,1,1,5" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
+        <TextBox HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,5,1,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
+        <TextBox HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
+        <TextBox HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,1,1,5" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
+        <TextBox HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,5,1,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
+        <TextBox HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
+        <TextBox HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
+        <TextBox Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="1" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,1,1,5" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="1" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,5,1,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
@@ -47,7 +49,7 @@
         <TextBox Grid.Column="1" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,5,1,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="1" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="1" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
-        <TextBox Grid.Column="2" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,1,5,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
+        <TextBox Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,1,5,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,1,5,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,1,5,5" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="2" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,5,5,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
@@ -56,7 +58,7 @@
         <TextBox Grid.Column="2" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,5,5,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="2" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,1,5,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="2" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,1,5,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
-        <TextBox Grid.Column="3" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="5,1,1,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
+        <TextBox Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="5,1,1,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="3" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="5,1,1,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="3" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="5,1,1,5" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="3" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="5,5,1,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
@@ -65,7 +67,7 @@
         <TextBox Grid.Column="3" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="5,5,1,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="3" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="5,1,1,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="3" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="5,1,1,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
-        <TextBox Grid.Column="4" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
+        <TextBox Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="4" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" FontSize="36" Text="?" Width="88"  GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="4" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,1,1,5" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="4" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,5,1,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
@@ -74,7 +76,7 @@
         <TextBox Grid.Column="4" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,5,1,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="4" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="4" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
-        <TextBox Grid.Column="5" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,1,5,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
+        <TextBox Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,1,5,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="5" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,1,5,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="5" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,1,5,5" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="5" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,5,5,1" GotFocus="TextBox_GotFocus"  TextChanged="TextBox_TextChanged" />
@@ -83,7 +85,7 @@
         <TextBox Grid.Column="5" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,5,5,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="5" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,1,5,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="5" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,1,5,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
-        <TextBox Grid.Column="6" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="5,1,1,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
+        <TextBox Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="5,1,1,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="6" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="5,1,1,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="6" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="5,1,1,5" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="6" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="5,5,1,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
@@ -92,7 +94,7 @@
         <TextBox Grid.Column="6" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="5,5,1,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="6" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="5,1,1,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="6" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="5,1,1,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
-        <TextBox Grid.Column="7" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
+        <TextBox Grid.Column="7" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="7" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="7" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,1,1,5" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="7" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,5,1,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
@@ -101,7 +103,7 @@
         <TextBox Grid.Column="7" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,5,1,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="7" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="7" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
-        <TextBox Grid.Column="8" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
+        <TextBox Grid.Column="8" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="8" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="8" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,1,1,5" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="8" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,5,1,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
@@ -110,6 +112,8 @@
         <TextBox Grid.Column="8" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" BorderThickness="1,5,1,1" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="8" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
         <TextBox Grid.Column="8" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" FontSize="36" Text="?" Width="88" GotFocus="TextBox_GotFocus" TextChanged="TextBox_TextChanged" />
+        <Button Content="Очистить" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="28" Margin="29,0,0,0" Grid.Row="9" VerticalAlignment="Center" Width="176" Click="Button_Click"/>
+        <Button x:Name="BTN_match" Grid.Column="5" Content="Решить" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="30" Margin="10,0,0,0" Grid.Row="9" VerticalAlignment="Center" Width="213" Click="BTN_match_Click"/>
 
 
 

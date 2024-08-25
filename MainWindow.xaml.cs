@@ -1,14 +1,6 @@
-﻿using System;
-using System.Text;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Sudoku_helper
 {
@@ -63,13 +55,13 @@ namespace Sudoku_helper
                 var n_row = Grid.GetRow(textBox);
                 var n_col = Grid.GetColumn(textBox);
                 //9 квадрат
-                if ((row > 5 && col > 5) && (n_row > 5 && n_col >5))
+                if ((row > 5 && col > 5 && row < 9 && col < 9) && (n_row > 5 && n_col >5 && n_row < 9 && n_col < 9))
                 {
                     Brush brush = new SolidColorBrush(Color.FromArgb(123, 255, 0, 0));
                     textBox.Background = brush;
                 }
                 //8 квадрат
-                else if ((row > 5 && col > 2  && col < 6) && (n_row > 5 && n_col > 2 && n_col < 6))
+                else if ((row > 5 && col > 2  && row < 9 && col < 6) && (n_row > 5 && n_col > 2 && n_row < 9 && n_col < 6))
                 {
                         Brush brush = new SolidColorBrush(Color.FromArgb(123, 255, 0, 0));
                         textBox.Background = brush;
@@ -121,6 +113,11 @@ namespace Sudoku_helper
                     Brush brush = new SolidColorBrush(Color.FromArgb(123, 255, 0, 0));
                     textBox.Background = brush;
                 }
+                if (textBox.Text != "")
+                {
+                    Brush brush = new SolidColorBrush(Color.FromArgb(123, 255, 0, 0));
+                    textBox.Background = brush;
+                }
             }
         }
 
@@ -153,5 +150,150 @@ namespace Sudoku_helper
                 Check_match(textBox.Text);
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            SetUpGame();
+        }
+
+        private int[,,] Fill_matrix()
+        {
+            int[,,] matrix = new int[10, 9, 9];
+            var brush = new SolidColorBrush(Color.FromArgb(123, 255, 0, 0)).ToString();
+            for (int i = 1; i < 10; i++)
+            {
+                Clear_area();
+                Check_match(Convert.ToString(i));
+                foreach (TextBox textBox in mainGrid.Children.OfType<TextBox>())
+                {
+                    var row = Grid.GetRow(textBox);
+                    var col = Grid.GetColumn(textBox);
+                    var color = textBox.Background.ToString();
+                    if (textBox.Text == Convert.ToString(i))
+                    {
+                        matrix[i, col, row] = i;
+                    }
+                    else if (color == brush || textBox.Text != "")
+                    {
+                        matrix[i, col, row] = 10;
+                    }
+                    else
+                    {
+                        matrix[i, col, row] = 0;
+                    }
+                }
+            }
+            return matrix;
+        }
+
+        private void BTN_match_Click(object sender, RoutedEventArgs e)
+        {
+                //while (Is_match(matrix) != true)
+                //{
+                for (int i = 1; i < 10; i++)
+                {
+                    var matrix = Fill_matrix();
+                    matrix = Check_horizon(matrix, i);
+                    Fill_grid(matrix);
+                    matrix = Fill_matrix();
+                    matrix = Check_vertical(matrix, i);
+                    Fill_grid(matrix);
+                }
+            //}
+            
+
+
+        }
+
+        private void Fill_grid(int[,,] matrix)
+        {
+            foreach (TextBox textBox in mainGrid.Children.OfType<TextBox>())
+            {
+                var row = Grid.GetRow(textBox);
+                var col = Grid.GetColumn(textBox);
+                for (int i = 1; i < 10; i++)
+                {
+                    if (matrix[i, col, row] == i)
+                    {
+                        textBox.Text = Convert.ToString(matrix[i,col, row]);
+                    }
+                }
+            }
+            
+        }
+
+        private int[,,] Check_vertical(int[,,] matrix, int num)
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                int row = 0;
+                int col = 0;
+                bool checker = false;
+                for (int j = 0; j < 9; j++)
+                {
+                    if (matrix[num, j, i] == 0)
+                    {
+                        if (checker)
+                        {
+                            checker = false;
+                            break;
+                        }
+                        checker = true;
+                        row = i;
+                        col = j;
+                    }
+                }
+                if (checker)
+                {
+                    matrix[num,col, row] = num;
+                }
+            }
+            return matrix;
+        }
+
+        private int[,,] Check_horizon(int[,,] matrix, int num)
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                int row = 0;
+                int col = 0;
+                bool checker = false;
+                for (int j = 0; j < 9; j++)
+                {
+                    if (matrix[num,i, j] == 0)
+                    {
+                        if (checker)
+                        {
+                            checker = false;
+                            break;
+                        }
+                        checker = true;
+                        row = j;
+                        col = i;
+                    }
+                }
+                if (checker)
+                {
+                    matrix[num,col, row] = num;
+                    return matrix;
+                }
+            }
+            return matrix;
+        }
+
+        //private bool Is_match(int[,,] matrix)
+        //{
+        //    for (int i = 0; i < 9; i++)
+        //    {
+        //        for(int j = 0; j < 9; j++)
+        //        {
+        //            if (matrix[i,j] == 0)
+        //            {
+        //                return false;
+        //            }
+        //        }
+        //    }
+        //    return true;
+        //}
     }
 }
